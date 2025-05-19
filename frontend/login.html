@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col">
+  <div id="menu-container"></div>
+  <div class="container mx-auto p-6 max-w-md flex-1 flex flex-col justify-center">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+    <form id="loginForm" class="bg-white p-6 rounded shadow mb-6">
+      <div class="mb-4">
+        <label class="block mb-1" for="email">Email</label>
+        <input id="email" type="email" class="input" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="password">Senha</label>
+        <input id="password" type="password" class="input" required>
+      </div>
+      <button type="submit" class="btn w-full">Entrar</button>
+    </form>
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Registrar</h2>
+    <form id="registerForm" class="bg-white p-6 rounded shadow">
+      <div class="mb-4">
+        <label class="block mb-1" for="registerUsername">Nome de Usuário</label>
+        <input id="registerUsername" type="text" class="input" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="registerEmail">Email</label>
+        <input id="registerEmail" type="email" class="input" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="registerPassword">Senha</label>
+        <input id="registerPassword" type="password" class="input" required>
+      </div>
+      <button type="submit" class="btn w-full">Registrar</button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.6.1/client-dist/socket.io.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen bg-gray-100 flex items-center justify-center">
+  <div class="container mx-auto p-6 max-w-md">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+    <form id="loginForm" class="bg-white p-6 rounded shadow mb-6">
+      <div class="mb-4">
+        <label class="block mb-1" for="email">Email</label>
+        <input id="email" type="email" class="input" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="password">Senha</label>
+        <input id="password" type="password" class="input" required>
+      </div>
+      <button type="submit" class="btn w-full">Entrar</button>
+    </form>
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Registrar</h2>
+    <form id="registerForm" class="bg-white p-6 rounded shadow">
+      <div class="mb-4">
+        <label class="block mb-1" for="registerUsername">Nome de Usuário</label>
+        <input id="registerUsername" type="text" class="input" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="registerEmail">Email</label>
+        <input id="registerEmail" type="email" class="input" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="registerPassword">Senha</label>
+        <input id="registerPassword" type="password" class="input" required>
+      </div>
+      <button type="submit" class="btn w-full">Registrar</button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.6.1/client-dist/socket.io.min.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen bg-gray-100 flex items-center justify-center">
+  <div class="container mx-auto p-6 max-w-md">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+    <form id="loginForm" class="bg-white p-6 rounded shadow mb-6">
+      <div class="mb-4">
+        <label class="block mb-1" for="email">Email</label>
+        <input id="email" type="email" class="input" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="password">Senha</label>
+        <input id="password" type="password" class="input" required>
+      </div>
+      <button type="submit" class="btn w-full">Entrar</button>
+    </form>
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Registrar</h2>
+    <form id="registerForm" class="bg-white p-6 rounded shadow">
+      <div class="mb-4">
+        <label class="block mb-1" for="registerUsername">Nome de Usuário</label>
+        <input id="registerUsername" type="text" class="input" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="registerEmail">Email</label>
+        <input id="registerEmail" type="email" class="input" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="registerPassword">Senha</label>
+        <input id="registerPassword" type="password" class="input" required>
+      </div>
+      <button type="submit" class="btn w-full">Registrar</button>
+    </form>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="container">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+    <form id="loginForm">
+      <div class="mb-4">
+        <label class="block mb-1" for="email">Email</label>
+        <input type="email" id="email" class="input" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="password">Senha</label>
+        <input type="password" id="password" class="input" required>
+      </div>
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+    <p class="mt-4 text-center">Não tem uma conta? <a href="register.html" class="text-blue-600">Registre-se</a></p>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+</html> -->

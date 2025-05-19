@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Administração</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen">
+  <div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Painel de Administração</h2>
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-2">ID</th>
+          <th class="p-2">Usuário</th>
+          <th class="p-2">Email</th>
+          <th class="p-2">Função</th>
+          <th class="p-2">Criado em</th>
+        </tr>
+      </thead>
+      <tbody id="userList"></tbody>
+    </table>
+    <button id="logout" class="btn mt-4">Sair</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.6.1/client-dist/socket.io.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

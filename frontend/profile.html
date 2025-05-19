@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Usuário</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen">
+  <div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Perfil do Usuário</h2>
+    <div id="userProfile" class="mb-8"></div>
+
+    <h3 class="text-xl font-bold mb-4">Minhas Compras Aprovadas</h3>
+    <table class="w-full border-collapse mb-8">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-2">ID</th>
+          <th class="p-2">Rifa</th>
+          <th class="p-2">Quantidade</th>
+          <th class="p-2">Data da Compra</th>
+          <th class="p-2">Ações</th>
+        </tr>
+      </thead>
+      <tbody id="purchaseList"></tbody>
+    </table>
+
+    <h3 class="text-xl font-bold mb-4">Resultados de Sorteios</h3>
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-2">Rifa</th>
+          <th class="p-2">Número Vencedor</th>
+          <th class="p-2">Vencedor</th>
+        </tr>
+      </thead>
+      <tbody id="raffleResults"></tbody>
+    </table>
+
+    <button id="logout" class="btn mt-4">Sair</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="numbersModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded shadow-lg max-w-md w-full">
+      <h3 class="text-lg font-bold mb-4">Números Comprados</h3>
+      <div id="numbersList" class="mb-4"></div>
+      <button id="closeModal" class="btn bg-gray-500 hover:bg-gray-600">Fechar</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.6.1/client-dist/socket.io.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Usuário</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen">
+  <div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Perfil do Usuário</h2>
+    <div id="userProfile" class="mb-8"></div>
+
+    <h3 class="text-xl font-bold mb-4">Minhas Compras Aprovadas</h3>
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-2">ID</th>
+          <th class="p-2">Rifa</th>
+          <th class="p-2">Quantidade</th>
+          <th class="p-2">Data da Compra</th>
+          <th class="p-2">Ações</th>
+        </tr>
+      </thead>
+      <tbody id="purchaseList"></tbody>
+    </table>
+    <button id="logout" class="btn mt-4">Sair</button>
+  </div>
+
+  <div id="numbersModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded shadow-lg max-w-md w-full">
+      <h3 class="text-lg font-bold mb-4">Números Comprados</h3>
+      <div id="numbersList" class="mb-4"></div>
+      <button id="closeModal" class="btn bg-gray-500 hover:bg-gray-600">Fechar</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.6.1/client-dist/socket.io.min.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Usuário</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="container">
+    <h2 class="text-2xl font-bold mb-4 text-center">Perfil do Usuário</h2>
+    <div id="profileInfo" class="mb-4">
+      <p><strong>Nome de Usuário:</strong> <span id="username"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Função:</strong> <span id="role"></span></p>
+      <p><strong>Data de Criação:</strong> <span id="created_at"></span></p>
+    </div>
+    <button id="logout" class="btn">Sair</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.6.1/client-dist/socket.io.min.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Usuário</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="container">
+    <h2 class="text-2xl font-bold mb-4 text-center">Perfil do Usuário</h2>
+    <div id="profileInfo" class="mb-4">
+      <p><strong>Nome de Usuário:</strong> <span id="username"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Função:</strong> <span id="role"></span></p>
+      <p><strong>Data de Criação:</strong> <span id="created_at"></span></p>
+    </div>
+    <button id="logout" class="btn">Sair</button>
+  </div>
+  <script src="js/profile.js"></script>
+</body>
+</html> -->

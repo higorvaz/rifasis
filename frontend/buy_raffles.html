@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprar Rifas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col">
+  <div id="menu-container"></div>
+  <div class="container mx-auto p-6 flex-1">
+    <h2 class="text-2xl font-bold mb-4">Comprar Rifas</h2>
+    <div class="bg-white p-6 rounded shadow mb-6">
+      <div class="mb-4">
+        <label class="block mb-1" for="raffleSelect">Selecione a Rifa</label>
+        <select id="raffleSelect" class="input">
+          <option value="">Carregando...</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="quantity">Quantidade de Números</label>
+        <select id="quantity" class="input">
+          <option value="10">10</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <button id="buyRaffle" class="btn">Comprar</button>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-4">Minhas Compras</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full bg-white rounded shadow">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="p-2 border">ID</th>
+            <th class="p-2 border">Rifa</th>
+            <th class="p-2 border">Quantidade</th>
+            <th class="p-2 border">Data</th>
+            <th class="p-2 border">Números</th>
+          </tr>
+        </thead>
+        <tbody id="userPurchases"></tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-4">Resultados dos Sorteios</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full bg-white rounded shadow">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="p-2 border">Rifa</th>
+            <th class="p-2 border">Número</th>
+            <th class="p-2 border">Vencedor</th>
+          </tr>
+        </thead>
+        <tbody id="raffleResults"></tbody>
+      </table>
+    </div>
+
+    <div id="numbersModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden flex items-center justify-center">
+      <div class="bg-white p-6 rounded shadow w-full max-w-lg max-h-[80vh] overflow-y-auto">
+        <h2 class="text-xl font-bold mb-4">Números Comprados</h2>
+        <div id="numbersList" class="numbers-container"></div>
+        <button id="closeNumbersModal" class="btn bg-gray-600 hover:bg-gray-700 mt-4 w-full">Fechar</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.6.1/client-dist/socket.io.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/buy_raffles.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprar Rifas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col">
+  <div id="menu-container"></div>
+  <div class="container mx-auto p-6 flex-1">
+    <h2 class="text-2xl font-bold mb-4">Comprar Rifas</h2>
+    <div class="bg-white p-6 rounded shadow mb-6">
+      <div class="mb-4">
+        <label class="block mb-1" for="raffleSelect">Selecione a Rifa</label>
+        <select id="raffleSelect" class="input">
+          <option value="">Carregando...</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="quantity">Quantidade de Números</label>
+        <select id="quantity" class="input">
+          <option value="10">10</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <button id="buyRaffle" class="btn">Comprar</button>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-4">Minhas Compras</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full bg-white rounded shadow">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="p-2 border">ID</th>
+            <th class="p-2 border">Rifa</th>
+            <th class="p-2 border">Quantidade</th>
+            <th class="p-2 border">Data</th>
+            <th class="p-2 border">Números</th>
+          </tr>
+        </thead>
+        <tbody id="userPurchases"></tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-4">Resultados dos Sorteios</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full bg-white rounded shadow">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="p-2 border">Rifa</th>
+            <th class="p-2 border">Número</th>
+            <th class="p-2 border">Vencedor</th>
+          </tr>
+        </thead>
+        <tbody id="raffleResults"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.6.1/client-dist/socket.io.min.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/buy_raffles.js"></script> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprar Rifas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen">
+  <div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Rifas Ativas</h2>
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-2">Nome</th>
+          <th class="p-2">Valor Total</th>
+          <th class="p-2">Data Sorteio</th>
+          <th class="p-2">Números Disponíveis</th>
+          <th class="p-2">Valor/Número</th>
+          <th class="p-2">Ações</th>
+        </tr>
+      </thead>
+      <tbody id="raffleList"></tbody>
+    </table>
+    <button id="logout" class="btn mt-4">Sair</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.6.1/client-dist/socket.io.min.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/buy_raffles.js"></script>
+</body>
+</html> -->

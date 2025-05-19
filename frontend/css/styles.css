@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100 font-sans;
+}
+
+.container {
+  @apply max-w-md mx-auto p-6 bg-white rounded-lg shadow-md;
+}
+
+.btn {
+  @apply w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700;
+}
+
+.input {
+  @apply w-full p-2 border rounded;
+}
+.input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #2563eb;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #1e40af;
+  }
+  
+  table {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+  }
+  
+  /* Estilos para o modal */
+  #numbersModal {
+    z-index: 1000;
+  }
+  
+  #numbersList p {
+    margin: 4px 0;
+  }
+
+
+  .input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #2563eb;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #1e40af;
+  }
+  
+  table {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+  }
+  
+  /* Estilos para o modal */
+  #numbersModal {
+    z-index: 1000;
+  }
+  
+  #numbersList p {
+    margin: 4px 0;
+  }
+  
+  /* Estilos para resultados de sorteios */
+  #raffleResults tr {
+    transition: background-color 0.2s;
+  }
+  
+  #raffleResults tr:hover {
+    background-color: #f5f5f5;
+  }
+
+
+  .input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #2563eb;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #1e40af;
+  }
+  
+  table {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+  }
+  
+  /* Estilos para o modal */
+  #numbersModal, #editModal {
+    z-index: 1000;
+  }
+  
+  #numbersList p {
+    margin: 4px 0;
+  }
+  
+  /* Estilos para resultados de sorteios */
+  #raffleResults tr {
+    transition: background-color 0.2s;
+  }
+  
+  #raffleResults tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Estilos para formulário e modal */
+  #editModal .input, #addRaffleForm .input {
+    margin-bottom: 8px;
+  }
+  
+  #editModal label, #addRaffleForm label {
+    font-weight: 500;
+  }
+
+
+
+
+  .input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .numbers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  
+  .number-item {
+    background-color: #e5e7eb;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  li{
+    align-content: center;
+  }
